@@ -192,6 +192,12 @@ body {
   }
 }
 
+.item_left_section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .item_image {
   width: 350px;
   height: 480px;

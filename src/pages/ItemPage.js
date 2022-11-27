@@ -64,7 +64,14 @@ const ItemPage = () => {
     } else {
       setDiff(null);
     }
-  }, [newDateAndHour, newDateNow, respDateAndHour, respTime, respDate, todo.completed]);
+  }, [
+    newDateAndHour,
+    newDateNow,
+    respDateAndHour,
+    respTime,
+    respDate,
+    todo.completed,
+  ]);
 
   return (
     <div className={styles.main_page_container}>
@@ -78,6 +85,7 @@ const ItemPage = () => {
             src={todo?.imgUrl ? todo.imgUrl : emptyPhoto}
             className={styles.item_image}
           />
+          <span>Views: {todo?.viewsQty}</span>
         </section>
         <section className={styles.item_right_section}>
           <div>
@@ -88,10 +96,11 @@ const ItemPage = () => {
             <h6>Todo Description</h6>
             <span>{todo?.description}</span>
           </div>
-          <span>Views: {todo?.viewsQty}</span>
           <span>Finish Date: {finishDate} </span>
           {diff && (
-            <span style={{ color: "orangered" }}>Left Time: {diff} minute!</span>
+            <span style={{ color: "orangered" }}>
+              Left Time: {diff} minute!
+            </span>
           )}
           {!hasTime && (
             <span style={{ color: "red" }}>Time is over. Todo not done!</span>
